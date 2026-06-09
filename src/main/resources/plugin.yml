@@ -3,3 +3,7 @@ version: 1.0.0
 author: Obey
 main: de.obey.zedarPolls.ZedarPolls
 api-version: '1.21.11'
+
+libraries:
+  - com.zaxxer:HikariCP:7.0.2
+  - com.h2database:h2:2.4.240
