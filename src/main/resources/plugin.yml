@@ -1,0 +1,5 @@
+name: ZedarPolls
+version: 1.0.0
+author: Obey
+main: de.obey.zedarPolls.ZedarPolls
+api-version: '1.21.11'
