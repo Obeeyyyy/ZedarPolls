@@ -129,12 +129,17 @@ public class Database {
                                 """;
 
         try (final Connection connection = getConnection()) {
-
             final Statement statement = connection.createStatement();
 
-            statement.execute(pollsQuery);
-            statement.execute(choicesQuery);
-            statement.execute(votesQuery);
+            zedarPolls.getExecutor().execute(() -> {
+                try {
+                    statement.execute(pollsQuery);
+                    statement.execute(choicesQuery);
+                    statement.execute(votesQuery);
+                } catch (final SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            });
 
         } catch (final SQLException e) {
             throw new RuntimeException(e);
